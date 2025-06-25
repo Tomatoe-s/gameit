@@ -1,0 +1,2 @@
+D:\coding\projects\gameit\build\Debug\SDL3.dll
+D:\coding\projects\gameit\build\MySDLApp.dir\Debug\MySDLApp.vcxproj.CopyComplete

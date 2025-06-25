@@ -1,0 +1,3 @@
+D:/coding/projects/gameit/build/CMakeFiles/MySDLApp.dir
+D:/coding/projects/gameit/build/CMakeFiles/ALL_BUILD.dir
+D:/coding/projects/gameit/build/CMakeFiles/ZERO_CHECK.dir
