@@ -1,0 +1,3 @@
+D:/coding/projects/gameit/out/build/gameit/CMakeFiles/MySDLApp.dir
+D:/coding/projects/gameit/out/build/gameit/CMakeFiles/edit_cache.dir
+D:/coding/projects/gameit/out/build/gameit/CMakeFiles/rebuild_cache.dir
