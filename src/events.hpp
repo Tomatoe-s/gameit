@@ -1,7 +1,6 @@
 #pragma once
 #include <unordered_map>
 #include <vector>
-
 namespace events {
 enum class EventType {
     Mouse_Motion,
@@ -34,28 +33,39 @@ enum class EventType {
     Pen_Button_Up
 
 };
-std::unordered_map<EventType, std::vector<void (*)(void)>> event_map;
 class EventManager {
-public:
-    
-    void registerEvent(EventType type, void (*callback)(void)) {
+    public:
+    EventManager() = default;
+    ~EventManager() {
+        clearEvents();
+    }
+    void registerEvent(Uint32 type, void (*callback)(SDL_Event)) {
+        std::cout << "Registering event type: " << type << std::endl;
         event_map[type].push_back(callback);
     }
 
-    void triggerEvent(EventType type) {
-        if (event_map.find(type) != event_map.end()) {
-            for (auto& callback : event_map[type]) {
-                callback();
+    void triggerEvent(SDL_Event data) {
+        std::cout << "Event triggered: " << data.type << std::endl;
+        // Check if the event type exists in the map and call all registered callbacks
+        if (event_map.find(data.type) != event_map.end()) {
+            std::cout << "Callbacks found for event type: " << data.type << std::endl;
+            for (auto& callback : event_map[data.type]) {
+                std::cout << "Calling callback for event type: " << data.type << std::endl;
+                callback(data);
             }
         }
     }
 
+    private:
+    
     void clearEvents() {
         event_map.clear();
     }
-    bool hasEvent(EventType type) const {
-        return event_map.find(type) != event_map.end() && !event_map.at(type).empty();
+    bool hasEvent(SDL_Event type) const {
+        return event_map.find(type.type) != event_map.end() && !event_map.at(type.type).empty();
     }
+    std::unordered_map<Uint32, std::vector<void (*)(SDL_Event)>> event_map;
+
 };
 
 }

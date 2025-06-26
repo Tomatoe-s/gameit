@@ -2,34 +2,32 @@
 #include <iostream>
 #include "window.hpp"
 #include "engine.hpp"
+#include "events/Quit.hpp"
+
+bool running = true;
+Engine& getEngine() {
+    static Engine engine("SDL3 Window", 800, 600);  // Initialized on first call
+    return engine;
+}
 int main() {
     try {
         
-        Engine Engine("SDL3 Window", 800, 600);
-
-        bool running = true;
+ Engine& engine = getEngine();
         while (running) {
             SDL_Event event;
             while (SDL_PollEvent(&event)) {
-                switch (event.type){
-                    case SDL_EVENT_QUIT:
-                        running = false;
-                        break;
-                    case SDL_EVENT_WINDOW_RESIZED:
-                        Engine.onResize(event.window.data1, event.window.data2);
-                        break;
-
-                }
+                engine.triggerEvent(event);
+              
             }
-SDL_RenderClear(Engine.getRenderer());    
-            SDL_SetRenderDrawColor(Engine.getRenderer(), 50, 50, 50, 255);
+SDL_RenderClear(engine.getRenderer());    
+            SDL_SetRenderDrawColor(engine.getRenderer(), 50, 50, 50, 255);
             float x = 0.0f, y = 0.0f;
             SDL_GetMouseState(&x, &y);
-            SDL_SetRenderDrawColor(Engine.getRenderer(), 255, 0, 0, 255);
-            SDL_RenderLine(Engine.getRenderer(), 0, 0, static_cast<int>(x), static_cast<int>(y));
-            SDL_SetRenderDrawColor(Engine.getRenderer(), 0, 255, 0,255);
+            SDL_SetRenderDrawColor(engine.getRenderer(), 255, 0, 0, 255);
+            SDL_RenderLine(engine.getRenderer(), 0, 0, static_cast<int>(x), static_cast<int>(y));
+            SDL_SetRenderDrawColor(engine.getRenderer(), 0, 255, 0,255);
             
-            SDL_RenderPresent(Engine.getRenderer());  
+            SDL_RenderPresent(engine.getRenderer());  
 
            
         }
