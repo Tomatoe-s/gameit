@@ -1,5 +1,5 @@
-#ifndef UTILITIES_HPP
-#define UTILITIES_HPP
+#pragma once
+
 #include <cmath>
 #include <stdexcept>
 namespace utilities {
@@ -101,15 +101,9 @@ public:
             y + (other.y - y) * t
         );
     }
-    Vector2 operator+(const Vector3& other) const {
-        return Vector2(x + other.x, y + other.y);
-    }
-    Vector2 operator-(const Vector3& other) const {
-        return Vector2(x - other.x, y - other.y);
-    }
-    Vector2 operator*(const Vector3& other) const {
-        return Vector2(x * other.x, y * other.y);
-    }
+   
+    
+    
 
 };
 class Vector3 {
@@ -208,4 +202,3 @@ public:
 };
 
 }
-#endif

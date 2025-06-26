@@ -1,3 +1,4 @@
+#pragma once
 #include <SDL3/SDL.h>
 #include <string>
 #include <stdexcept>
@@ -28,6 +29,11 @@ public:
     }
     SDL_Renderer* getRenderer() const {
         return renderer_;
+    }
+    void onResize(int width, int height) {
+        if (SDL_SetWindowSize(window_, width, height) != 0) {
+            throw std::runtime_error("Failed to resize window");
+        }
     }
 
 private:
