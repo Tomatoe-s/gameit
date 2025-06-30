@@ -12,7 +12,8 @@ include_directories(${SDL_DIR}/include)
 link_directories(${SDL_DIR}/lib)
 
 # Your executable
-file(GLOB SOURCES src/*.cpp)
+file(GLOB SOURCES src/*.cpp
+GLOB SOURCES src/events/*.cpp)
 add_executable(MySDLApp ${SOURCES})
 
 # Link SDL3

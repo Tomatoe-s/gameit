@@ -19,3 +19,6 @@ void registerEvent(Uint32 type, void (*callback)(SDL_Event)){
 };
 
 };
+
+Engine& getEngine();
+inline void registerEvent(uint32_t type, void (*callback)(SDL_Event));

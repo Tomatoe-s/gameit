@@ -376,6 +376,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="D:\coding\projects\gameit\src\events\MouseDown.cpp" />
+    <ClCompile Include="D:\coding\projects\gameit\src\events\Quit.cpp" />
     <ClCompile Include="D:\coding\projects\gameit\src\main.cpp" />
   </ItemGroup>
   <ItemGroup />

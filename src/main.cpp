@@ -2,22 +2,30 @@
 #include <iostream>
 #include "window.hpp"
 #include "engine.hpp"
-#include "events/Quit.hpp"
-
+#include "event_registry.hpp"
 bool running = true;
+Engine engine("SDL3 Window", 800, 600);
 Engine& getEngine() {
-    static Engine engine("SDL3 Window", 800, 600);  // Initialized on first call
+     
     return engine;
+}
+
+
+ void registerEvent(uint32_t type, void (*callback)(SDL_Event)) {
+    std::cout << "Registering event type: " << type << std::endl;
+    engine.registerEvent(type, callback);
 }
 int main() {
     try {
         
- Engine& engine = getEngine();
+
         while (running) {
             SDL_Event event;
             while (SDL_PollEvent(&event)) {
                 engine.triggerEvent(event);
-              
+                if (event.type == SDL_EVENT_QUIT) {
+                    running = false;
+                }
             }
 SDL_RenderClear(engine.getRenderer());    
             SDL_SetRenderDrawColor(engine.getRenderer(), 50, 50, 50, 255);

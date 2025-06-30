@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\coding\projects\gameit\build\CMakeFiles\7fef7737d6c7e8468f4cddad1719697a\all_events.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\coding\projects\gameit\build\CMakeFiles\424ba9905a5a3e0e2699f9535d652f74\GenerateEventsCpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\coding\projects\gameit\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\coding\projects\gameit\build\CMakeFiles\GenerateEventsCpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{1F538D7C-3A4D-3F26-B7E5-91016A44CA68}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

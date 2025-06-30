@@ -1,0 +1,28 @@
+^D:\CODING\PROJECTS\GAMEIT\BUILD\CMAKEFILES\7FEF7737D6C7E8468F4CDDAD1719697A\ALL_EVENTS.CPP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -DHEADERS="" -DOUTPUT="D:/coding/projects/gameit/build/generated/all_events.cpp" -P D:/coding/projects/gameit/generate_event_cpp.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\CODING\PROJECTS\GAMEIT\BUILD\CMAKEFILES\424BA9905A5A3E0E2699F9535D652F74\GENERATEEVENTSCPP.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\CODING\PROJECTS\GAMEIT\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/coding/projects/gameit -BD:/coding/projects/gameit/build --check-stamp-file D:/coding/projects/gameit/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

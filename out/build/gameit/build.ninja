@@ -49,6 +49,22 @@ cmake_ninja_workdir = D$:/coding/projects/gameit/out/build/gameit/
 
 build cmake_object_order_depends_target_MySDLApp: phony || .
 
+build CMakeFiles/MySDLApp.dir/src/events/MouseDown.cpp.obj: CXX_COMPILER__MySDLApp_unscanned_Debug D$:/coding/projects/gameit/src/events/MouseDown.cpp || cmake_object_order_depends_target_MySDLApp
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\MySDLApp.dir\src\events\MouseDown.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -ID:/coding/projects/gameit/libs/SDL3/include
+  OBJECT_DIR = CMakeFiles\MySDLApp.dir
+  OBJECT_FILE_DIR = CMakeFiles\MySDLApp.dir\src\events
+
+build CMakeFiles/MySDLApp.dir/src/events/Quit.cpp.obj: CXX_COMPILER__MySDLApp_unscanned_Debug D$:/coding/projects/gameit/src/events/Quit.cpp || cmake_object_order_depends_target_MySDLApp
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\MySDLApp.dir\src\events\Quit.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -ID:/coding/projects/gameit/libs/SDL3/include
+  OBJECT_DIR = CMakeFiles\MySDLApp.dir
+  OBJECT_FILE_DIR = CMakeFiles\MySDLApp.dir\src\events
+
 build CMakeFiles/MySDLApp.dir/src/main.cpp.obj: CXX_COMPILER__MySDLApp_unscanned_Debug D$:/coding/projects/gameit/src/main.cpp || cmake_object_order_depends_target_MySDLApp
   CONFIG = Debug
   DEP_FILE = CMakeFiles\MySDLApp.dir\src\main.cpp.obj.d
@@ -65,7 +81,7 @@ build CMakeFiles/MySDLApp.dir/src/main.cpp.obj: CXX_COMPILER__MySDLApp_unscanned
 #############################################
 # Link the executable MySDLApp.exe
 
-build MySDLApp.exe: CXX_EXECUTABLE_LINKER__MySDLApp_Debug CMakeFiles/MySDLApp.dir/src/main.cpp.obj
+build MySDLApp.exe: CXX_EXECUTABLE_LINKER__MySDLApp_Debug CMakeFiles/MySDLApp.dir/src/events/MouseDown.cpp.obj CMakeFiles/MySDLApp.dir/src/events/Quit.cpp.obj CMakeFiles/MySDLApp.dir/src/main.cpp.obj
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lSDL3  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
