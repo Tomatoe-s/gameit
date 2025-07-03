@@ -2,7 +2,6 @@
 #include <iostream>
 #include "window.hpp"
 #include "engine.hpp"
-#include "events/Quit.hpp"
 
 bool running = true;
 Engine& getEngine() {

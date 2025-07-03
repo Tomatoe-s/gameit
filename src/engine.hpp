@@ -1,21 +1,22 @@
 #pragma once
 
-#include "events.hpp"
+#include "events/EventHandler.hpp"
 #include "window.hpp"
 #include "utilities.hpp"
 
-class Engine : public Window, private events::EventManager {
 
-    public:
-    Engine(const std::string& title, int width, int height) : Window(title, width, height) {
-        // Initialize the event manager if needed
+class Engine : public Window {
+public:
+    Engine(const std::string& title, int width, int height)
+        : Window(title, width, height) {
+        // You can register events here if you like
     }
-void Engine::triggerEvent(SDL_Event data) {
-    EventManager::triggerEvent(data); // Call the base class version
 
-}
-void registerEvent(Uint32 type, void (*callback)(SDL_Event)){
-    EventManager::registerEvent(type, callback); // Call the base class version
-};
+    void triggerEvent(const SDL_Event& data) {
+        events::EventHandler::getInstance().callHandler(data);
+    }
 
+    void registerEvent(Uint32 type, events::EventHandler::HandlerFunc callback) {
+        events::EventHandler::getInstance().registerHandler(type, callback);
+    }
 };
